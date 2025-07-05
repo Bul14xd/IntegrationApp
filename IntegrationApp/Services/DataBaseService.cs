@@ -5,7 +5,7 @@ namespace IntegralCalculator.Services
 {
     public static class DatabaseService
     {
-        private static string connectionString = "Host=localhost;Username=postgres;Password=raisovich2005;Database=integraldb";
+        private static string connectionString = "Host=localhost;Username=postgres;Password=your_password;Database=integraldb";
 
         public static void InitializeDatabase()
         {
