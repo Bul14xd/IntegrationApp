@@ -1,0 +1,48 @@
+﻿<Window x:Class="IntegralCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Метод трапеций" Height="450" Width="500">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="0,0,0,10">
+            <Label Content="Нижний предел:" Width="120" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding IntegralData.LowerBound}" Width="300"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,0,0,10">
+            <Label Content="Верхний предел:" Width="120" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding IntegralData.UpperBound}" Width="300"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10">
+            <Label Content="Число интервалов:" Width="120" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding IntegralData.NumberOfIntervals}" Width="300"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" Margin="0,0,0,15">
+            <Label Content="Функция:" Width="120" HorizontalAlignment="Left"/>
+            <TextBox Text="{Binding IntegralData.FunctionString}" Width="300"/>
+        </StackPanel>
+        
+        <Button Grid.Row="4" Content="Вычислить" Command="{Binding CalculateCommand}" Width="120"/>
+
+        <TextBlock Grid.Row="5"
+                   Text="{Binding Result.Result, StringFormat='Результат: {0:F6}'}"
+                   FontSize="16"
+                   FontWeight="Bold"
+                   Margin="0,10,0,0"/>
+
+        <TextBlock Grid.Row="6"
+                   Text="{Binding StatusMessage}"
+                   Foreground="Gray"
+                   VerticalAlignment="Top"/>
+    </Grid>
+</Window>
